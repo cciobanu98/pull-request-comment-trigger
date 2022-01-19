@@ -18,6 +18,7 @@ async function run() {
             ? context.payload.comment.body
             : context.payload.pull_request.body) || '';
     core.setOutput('comment_body', body);
+    core.info(body);
 
     if (
         context.eventName === "issue_comment" &&
